@@ -27,6 +27,7 @@ public class CarRunner {
         }
 
 //        CarEntity carEntity=eM.find(CarEntity.class,2);
+//        System.out.println(carEntity);
         eT.commit();
         eM.close();
     }
