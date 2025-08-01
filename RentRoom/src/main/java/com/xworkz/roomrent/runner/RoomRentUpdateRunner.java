@@ -21,8 +21,9 @@ public class RoomRentUpdateRunner {
             eT.begin();
 
             RoomRentEntity roomRentEntity= eM.find(RoomRentEntity.class,1);
-//            roomRentEntity.setRoomName("Toilet");
-            eM.remove(roomRentEntity);
+          roomRentEntity.setRoomName("Toilet");
+            eM.merge(roomRentEntity);
+//            eM.remove(roomRentEntity);
             eT.commit();
 
         } catch (Exception e) {
