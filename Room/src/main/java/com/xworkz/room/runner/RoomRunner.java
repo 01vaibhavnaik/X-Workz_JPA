@@ -16,7 +16,7 @@ public class RoomRunner {
         EntityTransaction eT=eM.getTransaction();
 
         eT.begin();
-        List<RoomEntity> rooms=new ArrayList<>();
+        List<RoomEntity> rooms=new ArrayList<RoomEntity>();
         rooms.add(new RoomEntity(201,"Hall",360));
         rooms.add(new RoomEntity(203,"BedRoom",300));
         rooms.add(new RoomEntity(204,"Gallary",200));
