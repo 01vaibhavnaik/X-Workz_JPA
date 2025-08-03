@@ -20,6 +20,14 @@ public class RoomRunner {
         rooms.add(new RoomEntity(201,"Hall",360));
         rooms.add(new RoomEntity(203,"BedRoom",300));
         rooms.add(new RoomEntity(204,"Gallary",200));
+        rooms.add(new RoomEntity(205,"Kitchen",150));
+        rooms.add(new RoomEntity(206,"Bathroom",100));
+        rooms.add(new RoomEntity(207,"StoreRoom",80));
+        rooms.add(new RoomEntity(208,"DiningRoom",250));
+        rooms.add(new RoomEntity(209,"Balcony",120));
+        rooms.add(new RoomEntity(210,"UtilityRoom",90));
+        rooms.add(new RoomEntity(211,"GuestRoom",280));
+        rooms.add(new RoomEntity(212,"OfficeRoom",400));
 
         for (RoomEntity room:rooms){
             eM.persist(room);
