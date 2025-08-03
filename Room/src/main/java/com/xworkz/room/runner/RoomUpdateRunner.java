@@ -17,8 +17,11 @@ public class RoomUpdateRunner {
     EntityTransaction eT=eM.getTransaction();
 
     eT.begin();
-    RoomEntity room= eM.find(RoomEntity.class,0);
+    RoomEntity room= eM.find(RoomEntity.class,207);
+    RoomEntity room1 = eM.find(RoomEntity.class,204);
+
     eM.remove(room);
+    eM.remove(room1);
     eT.commit();
 
 
