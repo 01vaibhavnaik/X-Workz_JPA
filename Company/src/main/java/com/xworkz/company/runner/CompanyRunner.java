@@ -16,7 +16,12 @@ public class CompanyRunner {
 
         CompanyEntity company=new CompanyEntity();
         CompanyService companyService=new CompanyServiceImp();
-        companyService.valid(company);
+//        companyService.valid(company);
+
+        companyService.updateCompanyNameById(2,"Lenvo");
+
+        companyService.deleteById(4);
+
 
     }
 }

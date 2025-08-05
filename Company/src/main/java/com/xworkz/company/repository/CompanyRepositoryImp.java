@@ -48,4 +48,54 @@ public class CompanyRepositoryImp implements CompanyRepository {
 
 
     }
+
+    @Override
+    public void updateCompanyNameById(int id,String name) {
+        EntityManagerFactory entityManagerFactory= null;
+        EntityManager entityManager=null;
+        EntityTransaction entityTransaction=null;
+        try {
+            entityManagerFactory= Persistence.createEntityManagerFactory("company");
+            entityManager=entityManagerFactory.createEntityManager();
+            entityTransaction=entityManager.getTransaction();
+            entityTransaction.begin();
+
+            CompanyEntity company=entityManager.find(CompanyEntity.class,id);
+            company.setCompanyname(name);
+            entityTransaction.commit();
+
+        }catch (Exception e){
+            if (entityTransaction.isActive()){
+                entityTransaction.rollback();
+            }
+        }finally {
+            entityManager.close();
+        }
+    }
+
+    @Override
+    public void deleteById(int id) {
+        EntityManagerFactory entityManagerFactory= null;
+        EntityManager entityManager=null;
+        EntityTransaction entityTransaction=null;
+        try {
+            entityManagerFactory= Persistence.createEntityManagerFactory("company");
+            entityManager=entityManagerFactory.createEntityManager();
+            entityTransaction=entityManager.getTransaction();
+            entityTransaction.begin();
+
+            CompanyEntity company=entityManager.find(CompanyEntity.class,id);
+            entityManager.remove(company);
+            entityTransaction.commit();
+
+        }catch (Exception e){
+            if (entityTransaction.isActive()){
+                entityTransaction.rollback();
+            }
+        }finally {
+            entityManager.close();
+        }
+    }
+
+
 }

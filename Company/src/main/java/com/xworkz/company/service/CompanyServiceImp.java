@@ -10,4 +10,18 @@ public class CompanyServiceImp implements CompanyService {
         CompanyRepository companyRepository=new CompanyRepositoryImp();
         companyRepository.save(companyEntity);
     }
+
+    @Override
+    public void updateCompanyNameById(int id, String name) {
+        CompanyRepository companyRepository=new CompanyRepositoryImp();
+        companyRepository.updateCompanyNameById(id,name);
+    }
+
+    @Override
+    public void deleteById(int id) {
+        CompanyRepository companyRepository=new CompanyRepositoryImp();
+        companyRepository.deleteById(id);
+    }
+
+
 }
