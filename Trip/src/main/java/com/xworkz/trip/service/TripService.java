@@ -7,6 +7,7 @@ import java.util.List;
 public interface TripService {
     void save(List<TripEntity> tripEntities);
    List <TripEntity> getAll();
+   TripEntity getByName(String name);
 
 
 }
