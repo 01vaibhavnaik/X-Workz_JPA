@@ -18,4 +18,9 @@ public class TripServiceImp implements TripService{
     public List<TripEntity>  getAll() {
         return new TripRepositoryImp().getAll();
     }
+
+    @Override
+    public TripEntity getByName(String name) {
+        return new TripRepositoryImp().getByName(name);
+    }
 }

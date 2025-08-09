@@ -46,5 +46,14 @@ public class TripRunner {
         System.out.println();
         System.out.println("Retrive All Data...............");
         tripService.getAll().forEach(s-> System.out.println(s));
+
+        System.out.println();
+        System.out.println("Retrive By Name...............");
+        TripEntity tripEntity=tripService.getByName("Goa");
+        System.out.println(tripEntity);
+
+
+
+
     }
 }
