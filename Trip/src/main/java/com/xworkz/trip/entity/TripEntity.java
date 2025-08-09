@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "trip_details")
 @NamedQuery(name = "getAll",query = "select e from TripEntity e ")
+@NamedQuery(name = "getByName",query = "select entity from TripEntity entity where triplocation = place")
 public class TripEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
