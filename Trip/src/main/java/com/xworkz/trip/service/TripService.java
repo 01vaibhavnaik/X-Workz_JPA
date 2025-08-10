@@ -8,6 +8,8 @@ public interface TripService {
     void save(List<TripEntity> tripEntities);
    List <TripEntity> getAll();
    TripEntity getByName(String name);
+    TripEntity getByEmail(String name);
+
 
 
 }

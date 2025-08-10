@@ -52,6 +52,11 @@ public class TripRunner {
         TripEntity tripEntity=tripService.getByName("Goa");
         System.out.println(tripEntity);
 
+        System.out.println();
+        System.out.println("Retrive By email...............");
+        TripEntity tripEntity1=tripService.getByEmail("ravi@com");
+        System.out.println(tripEntity1);
+
 
 
 

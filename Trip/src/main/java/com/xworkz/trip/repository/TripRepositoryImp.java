@@ -96,4 +96,34 @@ public class TripRepositoryImp implements TripRepository{
         return trip;
 
     }
+
+    @Override
+    public TripEntity getByEmail(String name) {
+        EntityManager entityManager = null;
+        EntityTransaction entityTransaction = null;
+        TripEntity trip=null;
+
+
+
+        try {
+            entityManagerFactory = Persistence.createEntityManagerFactory("trip");
+            entityManager = entityManagerFactory.createEntityManager();
+            entityTransaction = entityManager.getTransaction();
+
+            entityTransaction.begin();
+            TypedQuery query = entityManager.createNamedQuery("getByEmail", TripEntity.class);
+            query.setParameter("email", name);
+            trip=(TripEntity) query.getSingleResult();
+            entityTransaction.commit();
+
+        } catch (Exception e) {
+            if (entityTransaction.isActive()) {
+                entityTransaction.rollback();
+            }
+        } finally {
+            entityManager.close();
+        }
+
+        return trip;
+    }
 }
