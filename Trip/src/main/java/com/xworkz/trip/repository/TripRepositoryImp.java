@@ -41,7 +41,7 @@ public class TripRepositoryImp implements TripRepository{
     public List <TripEntity> getAll() {
         EntityManager entityManager = null;
         EntityTransaction entityTransaction = null;
-        List tripEntity = null;
+        List<TripEntity> list= null;
 
 
         try {
@@ -51,7 +51,9 @@ public class TripRepositoryImp implements TripRepository{
 
             entityTransaction.begin();
             Query query = entityManager.createNamedQuery("getAll");
-            tripEntity =query.getResultList();
+            list =query.getResultList();list.forEach(s-> System.out.println(s));
+
+
             entityTransaction.commit();
 
         } catch (Exception e) {
@@ -62,7 +64,7 @@ public class TripRepositoryImp implements TripRepository{
             entityManager.close();
         }
 
-        return tripEntity ;
+        return list ;
 
     }
 
@@ -84,6 +86,7 @@ public class TripRepositoryImp implements TripRepository{
             query.setParameter("place", name);
             trip=(TripEntity) query.getSingleResult();
             entityTransaction.commit();
+            System.out.println("Name"+trip);
 
         } catch (Exception e) {
             if (entityTransaction.isActive()) {
@@ -114,7 +117,9 @@ public class TripRepositoryImp implements TripRepository{
             TypedQuery query = entityManager.createNamedQuery("getByEmail", TripEntity.class);
             query.setParameter("email", name);
             trip=(TripEntity) query.getSingleResult();
+            System.out.println("Name"+trip);
             entityTransaction.commit();
+
 
         } catch (Exception e) {
             if (entityTransaction.isActive()) {
