@@ -12,6 +12,7 @@ import javax.persistence.*;
 @NamedQuery(name = "getAll",query = "select e from TripEntity e ")
 @NamedQuery(name = "getByName",query = "select entity from TripEntity entity where triplocation =: place")
 @NamedQuery(name = "getByEmail",query = "select entity from TripEntity entity where email =: email")
+@NamedQuery(name = "getTripDay",query = "select entity.triplocation , entity.days from TripEntity entity where email =: Email ")
 public class TripEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

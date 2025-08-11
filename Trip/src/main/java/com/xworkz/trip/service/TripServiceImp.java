@@ -28,4 +28,9 @@ public class TripServiceImp implements TripService{
     public TripEntity getByEmail(String name) {
         return new TripRepositoryImp().getByEmail(name);
     }
+
+    @Override
+    public TripEntity getByLDEmail(String email) {
+        return new TripRepositoryImp().getByLDEmail(email);
+    }
 }

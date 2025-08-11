@@ -9,6 +9,8 @@ public interface TripService {
    List <TripEntity> getAll();
    TripEntity getByName(String name);
     TripEntity getByEmail(String name);
+    TripEntity getByLDEmail(String email);
+
 
 
 
